@@ -23,6 +23,30 @@
   background: #383535;
 }
 
+/* Hide scrollbar by default */
+.scroll-container {
+  overflow-y: hidden; /* Hide scrollbar */
+}
+
+/* Show scrollbar on hover */
+.scroll-container:hover {
+  overflow-y: auto; /* Show scrollbar on hover */
+}
+
+/* Optional: Customize scrollbar appearance */
+.scroll-container::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5); /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: transparent; /* Background of the scrollbar track */
+}
+
 @tailwind components;
 @tailwind utilities;
 

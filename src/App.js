@@ -24,6 +24,7 @@ import PasswordUpdate from "./Component/NewPassword/PasswordUpdate";
 import CreateContest from "./Component/AddContest/CreateContest";
 import AddContestHomepage from "./Component/AddContest/AddContestHomepage";
 import EditContest from "./Component/AddContest/EditContest.js";
+import FeedbackHome from "./Component/FeedBack/FeedbackHome.js";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -65,9 +66,9 @@ function App() {
             <Route path="/addSubject" element={<AddSubject />} />
             <Route path="/editSubject" element={<EditSubject />} />
             <Route path="/banner" element={<HomeBanner />} />
+            <Route path="/feedback" element={<FeedbackHome />} />
             <Route path="/students" element={<UserList />} />
             <Route path="/addUser" element={<AddUser />} />
-            {/* <Route path="/editUser" element={<EditClasses />} /> */}
             <Route path="/resetpassword" element={<PasswordUpdate />} />
             <Route path="*" element={<PageNotfound />} />
           </Routes>

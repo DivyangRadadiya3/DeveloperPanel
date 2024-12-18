@@ -264,7 +264,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    
-  ],
+  plugins: [],
 };

@@ -214,26 +214,6 @@ export default function CreateContest() {
     }
   };
 
-  // const handleAddContest = async () => {
-  //   try {
-  //     if (isEmpty()) {
-  //       toast.warning("Fill up empty space");
-  //     } else {
-  //       const response = await addNewContest(contestData, accessToken);
-  //       if (response.status === 200) {
-  //         navigate("/addContest");
-  //         toast.success("Contest added successfully");
-  //         loadClassData();
-  //         dispatch(addClassesData(response.data));
-  //         toast.error("Failed to add contest: " + response.message);
-  //       }
-  //     }
-  //   } catch (error) {
-  //     console.error(error);
-  //     console.error("An error occurred: " + error.message);
-  //   }
-  // };
-
   const loadClassData = async () => {
     setLoading(true);
     setError(null);
@@ -291,9 +271,10 @@ export default function CreateContest() {
               Contest Creation
             </p>
             <p className="text-lg font-normal text-left text-slate-700 dark:text-white">
-              Manage your contests easily from here.
+              Access all your contest management tools in one place
             </p>
           </div>
+
           <div className="space-y-6 px-2">
             <div className="space-y-2 w-full">
               <p className="flex items-center capitalize text-xl font-medium text-slate-800 dark:text-white">
@@ -322,6 +303,8 @@ export default function CreateContest() {
                 ))}
               </div>
             </div>
+            <hr className="border-t border-dashed border-gray-400 my-4" />
+
             <div>
               <ul className="text-start grid grid-cols-2 gap-2 md:grid-cols-2 md:gap-4 2xl:grid-cols-4 2xl:gap-6">
                 <li className="space-y-1">
@@ -393,6 +376,7 @@ export default function CreateContest() {
                 </li>
               </ul>
             </div>
+           
 
             <div className="space-y-1">
               <label
@@ -411,7 +395,7 @@ export default function CreateContest() {
                 onChange={handleChange}
               />
             </div>
-
+            <hr className="border-t border-dashed border-gray-400 my-4"/>
             <div className="space-y-3">
               <p className="text-xl tracking-tight font-medium text-left text-gray-700 dark:text-white capitalize">
                 Participation and Rewards
@@ -488,6 +472,7 @@ export default function CreateContest() {
               </ul>
             </div>
           </div>
+          <hr className="border-t border-dashed border-gray-400 my-4" />
           <div className="space-y-3">
             <p className="text-xl font-medium text-left text-gray-800 dark:text-white capitalize">
               Rank Section

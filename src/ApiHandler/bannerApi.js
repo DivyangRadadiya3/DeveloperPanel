@@ -23,20 +23,18 @@ export const fetchBannerData = async (accessToken) => {
       // console.log("Raw banner data:", data.banner_data);
 
       const updatedBannerData = response.data.data.banner_data.map((banner) => {
-        // Apply UTC to IST conversion to the required date fields
         if (banner.createdAt) {
-          banner.createdAt = convertUtcToIst(banner.createdAt); // Convert to IST
+          banner.createdAt = convertUtcToIst(banner.createdAt);
         }
         if (banner.updatedAt) {
-          banner.updatedAt = convertUtcToIst(banner.updatedAt); // Convert to IST
+          banner.updatedAt = convertUtcToIst(banner.updatedAt);
         }
         if (banner.startDate) {
-          banner.startDate = convertUtcToIst(banner.startDate); // Convert to IST
+          banner.startDate = convertUtcToIst(banner.startDate);
         }
         if (banner.endDate) {
-          banner.endDate = convertUtcToIst(banner.endDate); // Convert to IST
+          banner.endDate = convertUtcToIst(banner.endDate);
         }
-
         return banner;
       });
 

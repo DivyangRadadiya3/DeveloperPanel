@@ -141,7 +141,6 @@ export default function AddContestHomepage() {
       pageNumber !== currentPage
     ) {
       setPageLimit((prev) => prev + 1);
-
     }
   };
 
@@ -158,8 +157,7 @@ export default function AddContestHomepage() {
           </p>
           <div className="flex  items-center justify-between gap-2 w-full">
             <p className="text-lg text-left font-normal text-slate-600 ">
-              Enter ther subject name to create a new subject for the class
-              curriculum.
+              Give your contest a catchy and relevant title.
             </p>
             <button
               onClick={() => handleAddContest()}

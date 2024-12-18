@@ -21,9 +21,9 @@ function SideNavbar() {
           </div>
         </div>
 
-        <div className="flex flex-col flex-1 overflow-y-auto ">
-          <nav className="mt-5 pr-4">
-            <ul className="mb-6 flex flex-col gap-1.5">
+        <div className="flex flex-col flex-1 scroll-container overflow-y-hidden">
+          <nav className=" pr-4 ">
+            <ul className="my-2 flex flex-col gap-1.5">
               <li>
                 <NavLink to="/" className="flex space-x-3">
                   <span
@@ -244,6 +244,30 @@ function SideNavbar() {
                     } group w-full outline-none rounded-md duration-300 ease-in-out capitalize hover:text-white hover:bg-gray-600 py-2 px-4 font-medium `}
                   >
                     banner
+                  </span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/feedback"
+                  className="
+                   flex space-x-3"
+                >
+                  <span
+                    className={`${
+                      pathname === "/feedback"
+                        ? "border-l-4 border-orange-500"
+                        : "border-none"
+                    } rounded-r-lg `}
+                  ></span>
+                  <span
+                    className={`${
+                      pathname === "/feedback"
+                        ? "text-white bg-orange-500"
+                        : "text-black"
+                    } group w-full outline-none rounded-md duration-300 ease-in-out capitalize hover:text-white hover:bg-gray-600 py-2 px-4 font-medium `}
+                  >
+                    feedback
                   </span>
                 </NavLink>
               </li>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Pagination({  totalPages,currentPage,onPageChange}) {
+export default function Pagination({ totalPages, currentPage, onPageChange }) {
   const handleNextPage = () => {
     if (currentPage < totalPages) {
       onPageChange((prev) => prev + 1);
@@ -15,7 +15,7 @@ export default function Pagination({  totalPages,currentPage,onPageChange}) {
 
   return (
     <>
-      <div className="bg-white flex flex-row items-center justify-between p-2 border-t ">
+      <div className="bg-white flex flex-row items-center justify-between p-2 border-t rounded-b-md ">
         <p className="block text-sm text-slate-800">{` Page ${currentPage} of ${totalPages} `}</p>
         <div className="flex gap-1">
           <button

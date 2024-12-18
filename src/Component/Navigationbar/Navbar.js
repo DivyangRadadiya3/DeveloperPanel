@@ -21,11 +21,7 @@ function Navbar() {
   const [toggle, setToggle] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggleDropdown = () => setDropdownOpen((prevState) => !prevState);
-
-  function Navigation() {
-    setToggle(!toggle);
-  }
-
+  const Navigation = () => setToggle((prevState) => !prevState);
   const handleToggle = () => setConfirm((prevState) => !prevState);
 
   const handleLogout = () => {
@@ -38,8 +34,6 @@ function Navbar() {
       navigate("/");
     }, [1000]);
   };
-
-  
 
   return (
     <>
@@ -84,10 +78,10 @@ function Navbar() {
               <button
                 type="button"
                 title="Menu"
-                onClick={() => setToggle(!toggle)}
+                onClick={() => setDropdownOpen((prevState) => !prevState)}
                 className="p-2 cursor-pointer "
               >
-                {toggle ? (
+                {dropdownOpen ? (
                   <SlArrowUpCircle className="text-gray-700  w-6 h-6" />
                 ) : (
                   <SlArrowDownCircle className="text-gray-700 w-6 h-6" />
@@ -101,7 +95,7 @@ function Navbar() {
         <div className="flex items-center gap-x-2 sm:gap-x-4 lg:hidden">
           <button
             className="text-md text-slate-500 p-2 hover:bg-slate-500 hover:text-white rounded-full"
-            onClick={() => setNavbarOpen(!navbarOpen)}
+            onClick={() => setDropdownOpen((prevState) => !prevState)}
             title="Menu"
           >
             <RiMenuLine className="h-6 w-6" />
@@ -109,13 +103,13 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation Menu */}
       <div
-        className={`lg:hidden ${
-          navbarOpen ? "block" : "hidden"
-        } w-full max-h-56  bg-slate-100 border-b-2 border-slate-400 shadow-default transition duration-300 ease-in-out`}
+        className={`lg:hidden transition-all duration-300 ease-in-out ${
+          navbarOpen ? "max-h-56 opacity-100" : "max-h-0 opacity-0"
+        } w-full bg-slate-50 border-b border-slate-400 shadow-default drop-shadow-1 overflow-hidden`}
       >
-        <nav className="flex flex-col h-full overflow-y-auto duration-300 ease-linear">
+        <nav className="flex flex-col h-full pr-2 scroll-container overflow-y-auto duration-300 ease-linear">
           <ul className="mb-6 flex flex-col gap-1.5">
             {[
               "/",
@@ -128,9 +122,10 @@ function Navbar() {
               "/information",
               "/subject",
               "/banner",
+              "/feedback",
               "/students",
             ].map((path, index) => (
-              <li key={index}>
+              <li key={index} onClick={() => setNavbarOpen(!navbarOpen)}>
                 <NavLink to={path} className="flex space-x-3">
                   <span
                     className={`border-l-4 ${
@@ -157,14 +152,13 @@ function Navbar() {
           </ul>
         </nav>
       </div>
-
       {/* Dashboard Menu */}
       <div
         className={`${
-          toggle
-            ? "absolute right-0 top-18 flex w-62.5 z-20 transition duration-200 ease-in-out flex-col rounded-md border bg-white shadow-default dark:border-strokedark dark:bg-boxdark"
-            : "hidden"
-        }`}
+          dropdownOpen
+            ? "absolute right-0 top-18 flex w-62.5 z-20 transition-all duration-200 ease-in-out flex-col rounded-md border bg-white shadow-default dark:border-strokedark dark:bg-boxdark opacity-100 max-h-40"
+            : "hidden opacity-0 max-h-0"
+        } overflow-hidden`}
       >
         <ul className="flex flex-col gap-y-1 dark:text-white text-left font-medium capitalize">
           <li onClick={toggleDropdown}>
@@ -181,7 +175,7 @@ function Navbar() {
               </button>
             </NavLink>
           </li>
-          <li onClick={handleToggle}>
+          <li onClick={toggleDropdown}>
             <button
               type="button"
               className="py-2 px-4 w-full text-left outline-none rounded-md duration-300 ease-in-out capitalize hover:text-white hover:bg-gray-600"
