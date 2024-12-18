@@ -16,7 +16,6 @@ import ContestHome from "./Component/ContestType/ContestTypeHome";
 import ClassesHomePage from "./Component/Classes/ClassesHomePage";
 import InformationHome from "./Component/Information/InformationHome";
 import AddUser from "./Component/UserData/AddUser";
-import EditClasses from "./Component/Classes/EditClass";
 import ReportHomePage from "./Component/Report/ReportHomePage";
 import KYCHomePage from "./Component/KYC/KYCHomePage";
 import ContestEarningHome from "./Component/ContestEarning/ContestEarningHome";
